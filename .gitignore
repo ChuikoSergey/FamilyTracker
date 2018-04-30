@@ -1,0 +1,38 @@
+# File types
+*.txt
+*.exe
+*.dll
+*.obj
+*.vssscc
+*.vspscc
+*.tmp
+*.scc
+*.log
+*.builds
+
+# Build folders
+**/[Dd]ebug/
+**/[Rr]elease/
+**/[Bb]in/
+**/[Oo]bj/
+**/[Llog]/
+**/.vs/
+**/[Tt]est[Rr]esult*/
+**/[Bb]uild[Ll]og.*
+
+# ReSharper is a .NET coding add-in
+**/_ReSharper*/
+**/*.[Rr]e[Ss]harper
+**/*.DotSettings.user
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
