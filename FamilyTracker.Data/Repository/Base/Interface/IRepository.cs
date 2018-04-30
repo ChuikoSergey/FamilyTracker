@@ -12,7 +12,7 @@ namespace FamilyTracker.Data.Repository.Base.Interface
         Task AddAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
         Task DetachAsync(TEntity entity);
-        Task DeleteAsync(TEntity entity)
+        Task DeleteAsync(TEntity entity);
         Task DeleteAsync(int id);
         Task<bool> ExistAsync(int id);
     }

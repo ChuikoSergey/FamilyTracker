@@ -28,17 +28,17 @@ namespace FamilyTracker.Data.Repository.Base.Implementation
 
         #region Interface members
 
-        public Task<IQueryable<TEntity>> GetAsync()
+        public virtual Task<IQueryable<TEntity>> GetAsync()
         {
             return Task.FromResult(Include());
         }
 
-        public Task<TEntity> GetAsync(int id)
+        public virtual Task<TEntity> GetAsync(int id)
         {
             return Task.FromResult(Include().FirstOrDefault(entity => entity.Id == id));
         }
 
-        public Task AddAsync(TEntity entity)
+        public virtual Task AddAsync(TEntity entity)
         {
             return Task.Factory.StartNew(() =>
             {
@@ -54,7 +54,7 @@ namespace FamilyTracker.Data.Repository.Base.Implementation
             });
         }
 
-        public Task UpdateAsync(TEntity entity)
+        public virtual Task UpdateAsync(TEntity entity)
         {
             return Task.Factory.StartNew(() =>
             {
@@ -67,7 +67,7 @@ namespace FamilyTracker.Data.Repository.Base.Implementation
             });
         }
 
-        public Task DetachAsync(TEntity entity)
+        public virtual Task DetachAsync(TEntity entity)
         {
             return Task.Factory.StartNew(() =>
             {
@@ -76,7 +76,7 @@ namespace FamilyTracker.Data.Repository.Base.Implementation
             });
         }
 
-        public Task DeleteAsync(TEntity entity)
+        public virtual Task DeleteAsync(TEntity entity)
         {
             return Task.Factory.StartNew(() =>
             {
@@ -88,7 +88,7 @@ namespace FamilyTracker.Data.Repository.Base.Implementation
             });
         }
 
-        public Task DeleteAsync(int id)
+        public virtual Task DeleteAsync(int id)
         {
             return Task.Factory.StartNew(async () =>
             {
@@ -100,12 +100,12 @@ namespace FamilyTracker.Data.Repository.Base.Implementation
             });
         }
 
-        public Task<bool> ExistAsync(int id)
+        public virtual Task<bool> ExistAsync(int id)
         {
             return Task.FromResult(DbSet.Any(entity => entity.Id == id));
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             Context?.Dispose();
             Context = null;
@@ -115,7 +115,7 @@ namespace FamilyTracker.Data.Repository.Base.Implementation
 
         #region Helpers
 
-        protected IQueryable<TEntity> Include()
+        protected virtual IQueryable<TEntity> Include()
         {
             return DbSet;
         }

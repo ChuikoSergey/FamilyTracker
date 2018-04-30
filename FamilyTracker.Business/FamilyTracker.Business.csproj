@@ -53,6 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\CastleWindsor\FactoriesInstaller.cs" />
+    <Compile Include="Infrastructure\CastleWindsor\ManagersInstaller.cs" />
+    <Compile Include="Infrastructure\Components\Implementation\FactoryComponentSelector.cs" />
+    <Compile Include="Infrastructure\Components\Implementation\ObjectMapper.cs" />
+    <Compile Include="Infrastructure\Components\Interface\IManagerFactory.cs" />
+    <Compile Include="Infrastructure\Components\Interface\IObjectMapper.cs" />
+    <Compile Include="Managers\Base\Implementation\BaseCrudManager.cs" />
+    <Compile Include="Managers\Base\Implementation\CrudManager.cs" />
+    <Compile Include="Managers\Base\Interface\ICrudManager.cs" />
+    <Compile Include="Managers\Implementation\ManagerStore.cs" />
+    <Compile Include="Managers\Interface\IManagerStore.cs" />
+    <Compile Include="Models\Base\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,5 +76,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
