@@ -4,6 +4,7 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Routing;
+using FamilyTracker.Web.Infrastucture.ExceptionHandler.ExceptionHandlers;
 
 namespace FamilyTracker.Web
 {
@@ -23,7 +24,7 @@ namespace FamilyTracker.Web
             );
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
 
-            //config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
         }
     }
 

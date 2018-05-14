@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.7.5.2\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
@@ -61,6 +71,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -156,11 +167,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\Base\BaseCrudApiController.cs" />
+    <Compile Include="Filters\ValidationFilters\Base\ModelValidationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastucture\CastleWindsor\ControllerInstaller.cs" />
+    <Compile Include="Infrastucture\CastleWindsor\ValidatorsInstaller.cs" />
+    <Compile Include="Infrastucture\CastleWindsor\WindsorCompositionRoot.cs" />
+    <Compile Include="Infrastucture\ExceptionHandler\ExceptionHandlers\CustomHandleResult.cs" />
+    <Compile Include="Infrastucture\ExceptionHandler\ExceptionHandlers\ExceptionHandler.cs" />
+    <Compile Include="Infrastucture\FluentValidator\Attributes\Validator.cs" />
+    <Compile Include="Infrastucture\FluentValidator\Common\IModelValidator.cs" />
+    <Compile Include="Infrastucture\FluentValidator\Common\ModelValidator.cs" />
+    <Compile Include="Infrastucture\FluentValidator\Common\ValidationMode.cs" />
+    <Compile Include="Infrastucture\FluentValidator\Store\Implementations\ValidatorStore.cs" />
+    <Compile Include="Infrastucture\FluentValidator\Store\Interfaces\IValidatorStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Infrastucture\FluentValidator\Validators\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

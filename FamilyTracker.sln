@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyTracker.Data", "FamilyTracker.Data\FamilyTracker.Data.csproj", "{8FF26F2B-3F33-40BE-BE24-36DD66C5B0CF}"
 EndProject
@@ -41,5 +41,8 @@ Global
 		{8FF26F2B-3F33-40BE-BE24-36DD66C5B0CF} = {CDF2F782-E3EC-4499-8C2D-579E23AD59E5}
 		{C9CFECBD-6C10-4847-B77B-42DB3FCB9C8B} = {D154E1CC-D874-445E-82F7-0113AA185242}
 		{1A53D39C-AEE7-4508-9AB7-F5A03C6BECA3} = {AC3E8954-89A7-4720-A3BA-6522700B1B2B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8327CD3C-932B-4029-B6B1-DD2B27A09A76}
 	EndGlobalSection
 EndGlobal
