@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Exceptions\ValidationException.cs" />
     <Compile Include="Infrastructure\CastleWindsor\FactoriesInstaller.cs" />
     <Compile Include="Infrastructure\CastleWindsor\ManagersInstaller.cs" />
@@ -72,9 +73,28 @@
     <Compile Include="Managers\Base\Implementation\BaseCrudManager.cs" />
     <Compile Include="Managers\Base\Implementation\CrudManager.cs" />
     <Compile Include="Managers\Base\Interface\ICrudManager.cs" />
+    <Compile Include="Managers\Implementation\EventManager.cs" />
+    <Compile Include="Managers\Implementation\LogManager.cs" />
     <Compile Include="Managers\Implementation\ManagerStore.cs" />
+    <Compile Include="Managers\Implementation\MarkerManager.cs" />
+    <Compile Include="Managers\Implementation\PersonManager.cs" />
+    <Compile Include="Managers\Implementation\UserManager.cs" />
+    <Compile Include="Managers\Implementation\ZoneManager.cs" />
+    <Compile Include="Managers\Interface\IEventManager.cs" />
+    <Compile Include="Managers\Interface\ILogManager.cs" />
     <Compile Include="Managers\Interface\IManagerStore.cs" />
+    <Compile Include="Managers\Interface\IMarkerManager.cs" />
+    <Compile Include="Managers\Interface\IPersonManager.cs" />
+    <Compile Include="Managers\Interface\IUserManager.cs" />
+    <Compile Include="Managers\Interface\IZoneManager.cs" />
     <Compile Include="Models\Base\IModel.cs" />
+    <Compile Include="Models\DTO\GeoMessage.cs" />
+    <Compile Include="Models\EventModel.cs" />
+    <Compile Include="Models\LogModel.cs" />
+    <Compile Include="Models\MarkerModel.cs" />
+    <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\ZoneModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

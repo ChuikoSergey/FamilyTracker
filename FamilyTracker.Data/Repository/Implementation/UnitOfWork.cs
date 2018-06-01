@@ -9,6 +9,12 @@ namespace FamilyTracker.Data.Repository.Implementation
         #region Fields
 
         private DbContext _context;
+        private IEventRepository _eventRepository;
+        private ILogRepository _logRepository;
+        private IMarkerRepository _markerRepository;
+        private IPersonRepository _personRepository;
+        private IUserRepository _userRepository;
+        private IZoneRepository _zoneRepository;
 
         #endregion
 
@@ -22,6 +28,14 @@ namespace FamilyTracker.Data.Repository.Implementation
         #endregion
 
         #region Interface members
+
+        public IEventRepository Events => _eventRepository ?? (_eventRepository = new EventRepository(_context));
+        public ILogRepository Logs => _logRepository ?? (_logRepository = new LogRepository(_context));
+        public IMarkerRepository Markers => _markerRepository ?? (_markerRepository = new MarkerRepository(_context));
+        public IPersonRepository Persons => _personRepository ?? (_personRepository = new PersonRepository(_context));
+        public IUserRepository Users => _userRepository ?? (_userRepository = new UserRepository(_context));
+        public IZoneRepository Zones => _zoneRepository ?? (_zoneRepository = new ZoneRepository(_context));
+
 
         public void Dispose()
         {

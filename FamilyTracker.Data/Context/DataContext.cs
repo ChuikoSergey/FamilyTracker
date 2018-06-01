@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.Data.Entity;
+using FamilyTracker.Data.Entity;
 
 namespace FamilyTracker.Data.Context
 {
@@ -15,13 +16,14 @@ namespace FamilyTracker.Data.Context
 
         }
 
-        public static string ConnectionString
-        {
-            get
-            {
-                var temp = ConfigurationManager.ConnectionStrings["FamilyTrackerConnectionString"];
-                return temp != null ? ConfigurationManager.ConnectionStrings["FamilyTrackerConnectionString"].ConnectionString : "FamilyTrackerConnectionString";
-            }
-        }
+        public static string ConnectionString => ConfigurationManager.ConnectionStrings["FamilyTrackerConnectionString"] != null 
+                                                 ? ConfigurationManager.ConnectionStrings["FamilyTrackerConnectionString"].ConnectionString 
+                                                 : "FamilyTrackerConnectionString";
+
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Marker> Markers { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Zone> Zones { get; set; }
     }
 }
